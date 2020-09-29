@@ -1,0 +1,5 @@
+Matplotlib
+scipy
+numpy==1.19.1
+PyYAML==5.3.1
+pybullet==2.8.7

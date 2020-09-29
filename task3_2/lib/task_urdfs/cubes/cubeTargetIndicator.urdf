@@ -1,0 +1,66 @@
+<?xml version="0.0" ?>
+<robot name="cubeTargetIndicator.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+    
+    <xacro:property name="pi" value="3.1415926" />
+
+    <!-- size in x direction -->
+    <xacro:property name="targetAreaLength" value="0.7" />
+    <!-- size in y direction -->
+    <xacro:property name="targetAreaWidth" value="0.7" />
+    <!-- size in z direction -->
+    <xacro:property name="targetAreaHeight" value="0.3" />
+
+    <xacro:property name="wallThickness" value="0.01" />
+    <xacro:property name="wallHeight" value="0.3" />
+
+    <material name="red">
+        <color rgba="0.8 0 0 1"/>
+    </material>
+
+    <material name="yellow">
+        <color rgba="0.8 0.8 0 1"/>
+    </material>
+
+    <link name="base_link">
+    
+        <!-- target area plane -->
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 ${targetAreaHeight/2}"/>
+            <geometry>
+                <box size="${targetAreaLength} ${targetAreaWidth} ${targetAreaHeight}"/>
+            </geometry>
+            <material name="red" />
+        </visual>
+
+        <!-- target wall1 -->
+        <visual>
+            <origin rpy="0 0 0" xyz="-${(targetAreaLength+wallThickness)/2} 0 ${targetAreaHeight/2}"/>
+            <geometry>
+                <box size="${wallThickness} ${targetAreaWidth} ${wallHeight}"/>
+            </geometry>
+            <material name="yellow" />
+        </visual>
+
+        <!-- target wall2 -->
+        <visual>
+            <origin rpy="0 0 ${pi/2}" xyz="-${wallThickness/2} -${(targetAreaWidth+wallThickness)/2} ${targetAreaHeight/2}"/>
+            <geometry>
+                <box size="${wallThickness} ${targetAreaLength+wallThickness} ${wallHeight}"/>
+            </geometry>
+            <material name="yellow" />
+        </visual>
+
+        <visual>
+            <origin rpy="0 0 ${pi/2}" xyz="-${wallThickness/2} ${(targetAreaWidth+wallThickness)/2} ${targetAreaHeight/2}"/>
+            <geometry>
+                <box size="${wallThickness} ${targetAreaLength+wallThickness} ${wallHeight}"/>
+            </geometry>
+            <material name="yellow" />
+        </visual>
+        
+
+
+
+    </link>
+</robot>
+

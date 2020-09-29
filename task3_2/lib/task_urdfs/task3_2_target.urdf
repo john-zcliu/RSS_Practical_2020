@@ -1,0 +1,114 @@
+<?xml version="0.0" ?>
+<robot name="cubeTargetIndicator.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+    
+    <xacro:property name="pi" value="3.1415926" />
+    <xacro:property name="root2" value="1.4142" />
+
+    <xacro:property name="cubeSize" value="0.08" />
+    <xacro:property name="margin" value="0.10" />
+
+    <!-- size in x direction -->
+    <xacro:property name="targetAreaLength" value="${root2*cubeSize+margin}" />
+    <!-- size in y direction -->
+    <xacro:property name="targetAreaWidth" value="${root2*cubeSize+margin}" />
+    <!-- size in z direction -->
+    <xacro:property name="targetAreaHeight" value="0.0" />
+
+    <xacro:property name="wallThickness" value="0.002" />
+    <xacro:property name="wallHeight" value="0.1" />
+
+    <material name="red">
+        <color rgba="1 0 0 0.5"/>
+    </material>
+
+    <material name="yellow">
+        <color rgba="1 1 0 0.5"/>
+    </material>
+
+    <material name="green">
+        <color rgba="0 1 0 .0"/>
+    </material>
+
+    <material name="dark_green">
+        <color rgba="0 .7 0 .5"/>
+    </material>
+
+    <link name="base_link">
+        <!-- target area plane -->
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 ${targetAreaHeight/2}"/>
+            <geometry>
+                <box size="${targetAreaLength} ${targetAreaWidth} ${targetAreaHeight}"/>
+            </geometry>
+            <material name="dark_green" />
+        </visual>
+    </link>
+
+    <!-- <link name="wall1">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${wallThickness} ${targetAreaWidth} ${wallHeight}"/>
+            </geometry>
+            <material name="yellow" />
+        </visual>
+    </link>
+
+    <link name="wall2">
+        <visual>
+            <origin rpy="0 0 ${pi/2}" xyz="0 0 0"/>
+            <geometry>
+                <box size="${wallThickness} ${targetAreaLength+wallThickness} ${wallHeight}"/>
+            </geometry>
+            <material name="yellow" />
+        </visual>
+    </link>
+
+    <link name="wall3">
+        <visual>
+            <origin rpy="0 0 ${pi/2}" xyz="0 0 0"/>
+            <geometry>
+                <box size="${wallThickness} ${targetAreaLength+wallThickness} ${wallHeight}"/>
+            </geometry>
+            <material name="yellow" />
+        </visual>
+    </link> -->
+
+    <link name="cube">
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <box size="${cubeSize+0.01} ${cubeSize+0.01} ${cubeSize+0.01}"/>
+            </geometry>
+            <material name="green" />
+        </visual>
+    </link>
+        
+    <!-- <joint name="base_to_wall1" type="fixed">
+        <parent link="base_link"/>
+        <child link="wall1"/>
+        <origin xyz="-${(targetAreaLength+wallThickness)/2} 0 ${targetAreaHeight/2}"/>
+    </joint>        
+
+    <joint name="base_to_wall2" type="fixed">
+        <parent link="base_link"/>
+        <child link="wall2"/>
+        <origin xyz="-${wallThickness/2} -${(targetAreaWidth+wallThickness)/2} ${targetAreaHeight/2}"/>
+    </joint>  
+          
+    <joint name="base_to_wall3" type="fixed">
+        <parent link="base_link"/>
+        <child link="wall3"/>
+        <origin xyz="-${wallThickness/2} ${(targetAreaWidth+wallThickness)/2} ${targetAreaHeight/2}"/>
+    </joint> -->
+
+              
+    <joint name="base_to_cube" type="fixed">
+        <parent link="base_link"/>
+        <child link="cube"/>
+        <origin xyz="0 0 0"/>
+    </joint>
+
+
+
+</robot>

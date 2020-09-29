@@ -1,0 +1,70 @@
+# ===================================================================================
+# |    This file is auto generated according to the robot description               |
+# |    You should only modify the PID gains, while keep others unchanged            |
+# |    Remember to rename your final version of this file to "PD_gains.yaml"        |
+# ===================================================================================
+
+# Position Controllers (Torso) ---------------------------------------
+CHEST_JOINT0_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: CHEST_JOINT0
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+# Position Controllers (Head) ---------------------------------------
+HEAD_JOINT0_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: HEAD_JOINT0
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+HEAD_JOINT1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: HEAD_JOINT1
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+# Position Controllers (Left arm) ---------------------------------------
+LARM_JOINT0_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: LARM_JOINT0
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+LARM_JOINT1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: LARM_JOINT1
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+LARM_JOINT2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: LARM_JOINT2
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+LARM_JOINT3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: LARM_JOINT3
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+LARM_JOINT4_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: LARM_JOINT4
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+LARM_JOINT5_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: LARM_JOINT5
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+# Position Controllers (Right arm) ---------------------------------------
+RARM_JOINT0_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: RARM_JOINT0
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+RARM_JOINT1_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: RARM_JOINT1
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+RARM_JOINT2_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: RARM_JOINT2
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+RARM_JOINT3_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: RARM_JOINT3
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+RARM_JOINT4_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: RARM_JOINT4
+  pid: {p: 0.0, i: 0.0, d: 0.0}
+RARM_JOINT5_position_controller:
+  type: effort_controllers/JointPositionController
+  joint: RARM_JOINT5
+  pid: {p: 0.0, i: 0.0, d: 0.0}
