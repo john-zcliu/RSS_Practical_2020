@@ -1,3 +1,6 @@
+# Please don't submit this file. 
+# This file is only for helping you while development
+
 import subprocess, math, time, sys, os, numpy as np
 import matplotlib.pyplot as plt
 import pybullet as bullet_simulation
