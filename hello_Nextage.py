@@ -12,7 +12,7 @@ abs_path = os.path.dirname(os.path.realpath(__file__))
 root_path = abs_path
 core_path = root_path + '/core'
 sys.path.append(core_path)
-from Pybullet_Simulation_template import Simulation
+from Pybullet_Simulation_template import Simulation_template
 
 pybulletConfigs = {
     "simulation"          : bullet_simulation,
@@ -36,7 +36,7 @@ robotConfigs = {
     "colored"               : True          # Ture | False
 }
 
-sim = Simulation(pybulletConfigs, robotConfigs)
+sim = Simulation_template(pybulletConfigs, robotConfigs)
 
 try:
     time.sleep(float(sys.argv[1]))
