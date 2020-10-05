@@ -57,7 +57,7 @@ task2_endEffectorOrientation = [0, 0, 0]
 verbose = False
 
 # TODO: Add your code here to start simulation
-raise Exception("Method not involked")
+raise Exception("Method not invoked")
 
 # Now plot some graphs
 task2_figure_name = "task2_kinematics.png"

@@ -60,7 +60,7 @@ task2_endEffectorOrientation = [0, 0, 0]
 verbose = False
 
 # TODO: Add your code here to start simulation
-raise Exception("Method not involked")
+raise Exception("Method not invoked")
 # You could copy your code from Simulation.inverseInkematics() to provided skeleton
 # Simulation.inverseInkematics_without_PD() to test your IK solver
 
