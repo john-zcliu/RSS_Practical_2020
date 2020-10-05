@@ -21,7 +21,6 @@ try:
 except:
     gui = True
 
-global task1_jointName, task1_targetPosition, task1_targetVelocity
 
 
 
@@ -41,7 +40,7 @@ pybulletConfigs = {
 }
 robotConfigs = {
     "robotPath": core_path + "/nextagea_description/urdf/NextageaOpen.urdf",
-    "robotPIDConfigs": core_path + "/nextagea_pybullet_control.yaml",
+    "robotPIDConfigs": core_path + "/PD_gains.yaml",
     "robotStartPos": [0, 0, 0.85],
     "robotStartOrientation": [0, 0, 0, 1],
     "fixedBase": False,
@@ -61,7 +60,7 @@ task1_savefig = False
 
 
 pltTime, pltTarget, pltTorque, pltPosition, pltVelocity = \
-    sim.moveJoint_solution(
+    sim.moveJoint(
         task1_jointName, task1_targetPosition, task1_targetVelocity, verbose)
 
 # modify the code in below if needed

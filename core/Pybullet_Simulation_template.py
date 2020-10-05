@@ -111,7 +111,7 @@ class Simulation_template(Simulation_base):
     ########## Task 2: Kinematics ##########
     # Task 2.1 Forward Kinematics
     # Task 2.1.1 Rotation axis of each joint
-    self.jointRotationAxis = {
+    jointRotationAxis = {
         'base_to_dummy': np.zeros(3),  # Virtual joint
         'base_to_waist': np.zeros(3),  # Fixed joint
         'CHEST_JOINT0': None,  # TODO: modify from here
@@ -132,7 +132,7 @@ class Simulation_template(Simulation_base):
     }
 
     # Task 2.1.1 Translation of each joint from its parent
-    self.frameTranslationFromParent = {
+    frameTranslationFromParent = {
         'base_to_dummy': np.zeros(3),  # Virtual joint
         'base_to_waist': np.zeros(3),  # Fixed joint
         'CHEST_JOINT0': None,  # TODO: modify from here
