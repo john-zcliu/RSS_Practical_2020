@@ -136,6 +136,7 @@ class Simulation_base:
         self.jointTorques = {}
         self.jointMaxTorques = {}
         self.jointTargetPos = {}
+        self.jointPositionOld = {}
         self.jointTargetVels = {}
         self.jointIntegrals = {}
         self.jointGravCompensation = {}
@@ -193,6 +194,7 @@ class Simulation_base:
                     self.jointControlType[jointName] = "velocity"
                     self.jointTorques[jointName] = 0.0
                     self.jointTargetPos[jointName] = 0.0
+                    self.jointPositionOld[jointName] = 0.0
                     self.jointTargetVels[jointName] = 0.0
                     self.jointIntegrals[jointName] = 0.0
                     self.jointGravCompensation[jointName] = 0.0
@@ -224,7 +226,7 @@ class Simulation_base:
         if robotConfigs['colored']:
             for joint in self.robotColorPreset:
                 self.p.resetVisualShapeData(
-                    self.robot, self.jointIds[joint], 
+                    self.robot, self.jointIds[joint],
                     rgbaColor=self.colorPalettes[self.robotColorPreset[joint]])
 
         # Finishing up and show no of joints
@@ -369,7 +371,7 @@ class Simulation_base:
         self.p.disconnect()
 
     ########## Robot Configs & Status ##########
-    
+
     def getRobotPose(self, robot=None):
         """Gets the robot (origin) position
 

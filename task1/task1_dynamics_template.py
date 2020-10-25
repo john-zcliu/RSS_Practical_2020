@@ -34,7 +34,7 @@ pybulletConfigs = {
     "controlFrequency": 1000,
     "updateFrequency": 250,
     "gravity": -9.81,
-    "gravityCompensation": 1.,
+    "gravityCompensation": .8,
     "floor": True,
     "cameraSettings": (1.07, 90.0, -52.8, (0.07, 0.01, 0.76))
 }
@@ -43,13 +43,13 @@ robotConfigs = {
     "robotPIDConfigs": core_path + "/PD_gains.yaml",
     "robotStartPos": [0, 0, 0.85],
     "robotStartOrientation": [0, 0, 0, 1],
-    "fixedBase": False,
+    "fixedBase": True,
     "colored": False
 }
 sim = Simulation(pybulletConfigs, robotConfigs)
 
-task1_jointName = "LARM_JOINT2"
-task1_targetPosition = -0.8
+task1_jointName = "LARM_JOINT1"
+task1_targetPosition = -0.4
 task1_targetVelocity = 0.0
 verbose = False
 task1_figure_name = "Task1_DP_response.png"
@@ -57,11 +57,10 @@ task1_savefig = False
 ### to here
 
 
-
-
-pltTime, pltTarget, pltTorque, pltPosition, pltVelocity = \
+pltTime, pltTarget, pltTorque, pltTorqueTime, pltPosition, pltVelocity = \
     sim.moveJoint(
         task1_jointName, task1_targetPosition, task1_targetVelocity, verbose)
+        
 
 # modify the code in below if needed
 fig = plt.figure(figsize=(6, 8))
@@ -77,7 +76,7 @@ plt.plot(pltTime, pltVelocity, color='lightblue')
 plt.ylabel("Velocity rads/s")
 
 plt.subplot(313)
-plt.plot(pltTime, pltTorque, color='orange')
+plt.plot(pltTorqueTime, pltTorque, color='orange')
 plt.xlabel("Time s")
 plt.ylabel("Torque N")
 

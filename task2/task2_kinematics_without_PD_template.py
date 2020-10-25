@@ -1,7 +1,9 @@
-# Please don't submit this file. 
-# This file is only for helping you while development
-
-import subprocess, math, time, sys, os, numpy as np
+import subprocess
+import math
+import time
+import sys
+import os
+import numpy as np
 import matplotlib.pyplot as plt
 import pybullet as bullet_simulation
 import pybullet_data
@@ -24,17 +26,13 @@ try:
 except:
     gui = True
 
-global task2_endEffectorName  # same as the joint name
-global task2_targetPosition
-global task2_endEffectorOrientation
 
 
-
-### You may want to change the code since here
+### You may change the code since here
 pybulletConfigs = {
     "simulation": bullet_simulation,
     "pybullet_extra_data": pybullet_data,
-    "gui": gui,
+    "gui": True,
     "panels": False,
     "realTime": False,
     "controlFrequency": 1000,
@@ -54,23 +52,22 @@ robotConfigs = {
 }
 sim = Simulation(pybulletConfigs, robotConfigs)
 
-task2_endEffectorName = "LARM_JOINT2"
-task2_targetPosition = -0.8
-task2_endEffectorOrientation = [0, 0, 0]
+task2_endEffectorName = "LARM_JOINT5"
+task2_targetPosition = np.array([0.5, 0.3, 1.3])
+task2_endEffectorOrientation = None
 verbose = False
 
-# TODO: Add your code here to start simulation
-raise Exception("Method not invoked")
-# You could copy your code from Simulation.inverseInkematics() to provided skeleton
-# Simulation.inverseInkematics_without_PD() to test your IK solver
+# Example code. Feel free to modify
+pltTime, pltTargetError, pltFinalTargetError, pltTimeExtra, pltErrorExtra = \
+sim.moveEFToTarget_without_PD(
+    task2_endEffectorName, task2_targetPosition, 
+    speed=0.0025, orientation=task2_endEffectorOrientation,
+    threshold=2e-2, maxIter=1000, debug=False, verbose=True)
 
 
 # Now plot some graphs
-task2_figure_name = "task2_kinematics.png"
+task2_figure_name = "task2_kinematics_without_pd.png"
 task2_savefig = False
-# ... 
-
-
-
-
+# TODO: please write some code to plot the graph
+# The example code is provided in task1.
 
