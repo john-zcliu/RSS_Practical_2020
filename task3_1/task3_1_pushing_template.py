@@ -46,7 +46,7 @@ robotConfigs = {
 
 sim = Simulation(pybulletConfigs, robotConfigs)
 
-
+##### Please leave this function unchanged, feel free to modify others #####
 def getReadyForTask():
     global finalTargetPos
     # compile urdfs
@@ -88,7 +88,6 @@ def getReadyForTask():
 
     return tableId, cubeId, targetId
 
-##### Please leave above unchanged, feel free to modify below #####
 
 def solution():
     # TODO: Add your code here
