@@ -177,7 +177,7 @@ class Simulation_template(Simulation_base):
 
     # Task 2.2 Inverse Kinematics
     # Task 2.2.1 Jacobian matrix
-    def jacobianMatrix(self, targetPosition):
+    def jacobianMatrix(self, endEffector, targetPosition):
         """Calculate the Jacobian Matrix for the Nextage Robot"""
         # TODO: Add your code here
         pass
