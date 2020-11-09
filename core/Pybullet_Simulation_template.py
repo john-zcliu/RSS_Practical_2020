@@ -192,11 +192,6 @@ class Simulation_template(Simulation_base):
         Keywork Arguments: \\
             orientation: the desired orientation of the end-effector 
                          together with its parent link \\
-            speed: how fast the end-effector should move (m/s) \\
-            orientation: the desired orientation \\
-            compensationRatio: naive gravity compensation ratio \\
-            debugLine: optional \\
-            verbose: optional \\
 
         Return: \\
             None, but executes tick() to run the simulation
@@ -215,9 +210,9 @@ class Simulation_template(Simulation_base):
             speed: how fast the end-effector should move (m/s) \\
             orientation: the desired orientation of the end-effector 
                         together with its parent link \\
-            threshould: the maximum allowed error to the target position \\
+            threshold: the maximum allowed error to the target position \\
             maxIter: the maximum number of iteration allowed \\  
-            debugLine: optional \\
+            debug: optional \\
             verbose: optional \\
 
         Return: None,
@@ -245,9 +240,9 @@ class Simulation_template(Simulation_base):
             speed: how fast the end-effector should move (m/s) \\
             orientation: the desired orientation of the end-effector 
                         together with its parent link \\
-            threshould: the maximum allowed error to the target position \\
+            threshold: the maximum allowed error to the target position \\
             maxIter: the maximum number of iteration allowed \\  
-            debugLine: optional \\
+            debug: optional \\
             verbose: optional \\
 
         Return: \\
